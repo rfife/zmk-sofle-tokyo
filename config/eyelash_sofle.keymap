@@ -121,12 +121,18 @@
         };
 
         layer_3 {
+// -----------------------------------------------------------------------------------------------------------------------
+// | BTCLR  |  BT1    |  BT2    |   BT3   |   BT4   |   BT5   |       |                |       |      |      |       |      |       |       |
+// | OUT_USB| RGB_HUD | RGB_HUI | RGB_SAD | RGB_SAI | RGB_EFF |       |                |       |      |      |       |      |       |       |
+// |OUT_BLE | RGB_BRD | RGB_BRI |         |         |         |       |                |       |      |      |       |      |       |       |
+// |        |         |         |         |         |         |       |                |       |      |      |       |      |       |       |
+// |        |         |         |         |         |         |                |      |      |      |       |      |
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&bt BT_CLR   &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2 &bt BT_SEL 3    &bt BT_SEL 4    &rgb_ug RGB_TOG  &trans &trans &trans &trans &trans &trans
+&out OUT_USB &rgb_ug RGB_HUD &rgb_ug RGB_HUI &rgb_ug RGB_SAD &rgb_ug RGB_SAI &rgb_ug RGB_EFF &trans        &trans &trans &trans &trans &trans &trans
+&out OUT_BLE &rgb_ug RGB_BRD &rgb_ug RGB_BRI &trans       &trans          &trans          &trans           &trans &trans &trans &trans &trans &trans
+&trans       &trans          &trans          &trans       &trans          &trans          &trans           &trans &trans &trans &trans &trans &trans
+&trans       &trans          &trans          &trans       &trans          &trans          &trans           &trans &trans &trans &trans
             >;
 
             display-name = "layer3";
